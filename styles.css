@@ -1,21 +1,160 @@
-:root{
-  --bg:#f7f8fb;
-  --accent:#2b7cff;
-  --text:#222;
-  --muted:#666;
+/* RESET + PERUS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-*{box-sizing:border-box}
-body{font-family:Segoe UI, Roboto, Helvetica, Arial, sans-serif;margin:0;color:var(--text);background:var(--bg);line-height:1.6}
-.container{max-width:900px;margin:0 auto;padding:1rem}
-.site-header{background:#fff;border-bottom:1px solid #eee;padding:1rem 0}
-.tagline{color:var(--muted);margin-top:.25rem}
-h1{margin:0}
-main h2{margin-top:1.25rem}
-.btn{display:inline-block;background:var(--accent);color:#fff;padding:.5rem .75rem;border-radius:6px;text-decoration:none}
-.btn:hover{opacity:.95}
-.site-footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:.9rem;margin-top:2rem}
 
-@media (prefers-color-scheme: dark) {
-  :root{--bg:#0f1720;--text:#e6eef8;--muted:#9aa7be;--accent:#6ea8ff}
-  .site-header{background:transparent;border-bottom-color:#1f2a36}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0b0f14;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* NAVIGAATIO */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  color: #22c55e;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin-left: 32px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #22c55e;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 24px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  color: #9ca3af;
+  margin-top: 16px;
+}
+
+/* YLEISET OSIOT */
+section {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 24px;
+  scroll-margin-top: 100px;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+/* EXPERTISE */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.expertise-card {
+  background: #111827;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-8px);
+}
+
+.expertise-card h3 {
+  color: #22c55e;
+  margin-bottom: 16px;
+}
+
+.expertise-card ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.expertise-card li {
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.expertise-card.highlight {
+  outline: 2px solid #22c55e;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  background: #111827;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 48px 0;
+  color: #9ca3af;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    margin-left: 16px;
+  }
 }
