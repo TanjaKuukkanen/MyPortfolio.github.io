@@ -1,12 +1,12 @@
 :root {
-  --bg: #0e0f11; /* lähes musta */
-  --card-bg: #16181c; /* grafiitti */
-  --border: #24262b; /* hienovarainen raja */
+  --bg: #12110f;
+  --card-bg: #1c1b18;
+  --border: #2a2925;
 
-  --text: #e6e6e6; /* pehmeä vaalea */
-  --muted: #a1a1a6; /* hillitty harmaa */
+  --text: #f0eee9;
+  --muted: #b3afa6;
 
-  --accent: #8f8f94; /* EI sininen */
+  --accent: #c2b59b; /* lämmin beige/stone */
 }
 
 * {
@@ -99,7 +99,7 @@ h2 {
   margin-bottom: 0.4rem;
 }
 
-/* highlight */
+/* aws highlight */
 .expertise-card.highlight {
   border-color: var(--accent);
   background: linear-gradient(
