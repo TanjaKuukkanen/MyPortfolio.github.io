@@ -1,37 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fi">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Yksinkertainen sivu</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Esimerkkisivu, joka on yksinkertainen ja helposti muokattava.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanja K – Portfolio</title>
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Tervetuloa</h1>
-      <p class="tagline">Yksinkertainen esimerkkisivu</p>
+
+  <!-- NAVIGAATIO -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Tanja K</div>
+      <nav>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Esittely</h2>
-      <p>Tämä on hyvin yksinkertainen HTML-sivu. Muokkaa otsikkoa, värejä ja sisältöä mielesi mukaan.</p>
-      <p><a class="btn" href="#yhteys">Ota yhteyttä</a></p>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Tanja K</h1>
+    <p>Business IT • Cloud • Product Development</p>
+    <p class="hero-sub">tähän tekstiä</p>
+  </section>
 
-    <section id="yhteys">
-      <h2>Yhteystiedot</h2>
-      <p>Sähköposti: <a href="mailto:esimerkki@example.com">esimerkki@example.com</a></p>
-    </section>
-  </main>
+  <!-- EXPERTISE -->
+  <section id="expertise" class="expertise">
+    <h2>My Expertise</h2>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Nimesi</p>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <h3>Product Owner</h3>
+        <p>tähän tekstiä</p>
+        <ul>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card highlight">
+        <h3>AWS & Cloud</h3>
+        <p>tähän tekstiä</p>
+        <ul>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <h3>Business & Strategy</h3>
+        <p>tähän tekstiä</p>
+        <ul>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+          <li>tähän tekstiä</li>
+        </ul>
+      </div>
     </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Project name</h3>
+        <p>tähän tekstiä</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Project name</h3>
+        <p>tähän tekstiä</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>tähän tekstiä</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Tanja K</p>
   </footer>
+
 </body>
+
 </html>
