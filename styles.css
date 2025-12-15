@@ -182,3 +182,111 @@ h2 {
     font-size: 2.2rem;
   }
 }
+
+/* =========================
+   AIKAJANA / TIMELINE
+   ========================= */
+
+#historia {
+  margin-top: 4rem;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 1.5rem;
+  padding-left: 2.25rem; /* tilaa viivalle + pisteelle */
+}
+
+/* Pystyviiva */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: 1rem;
+  width: 2px;
+  background: var(--border);
+}
+
+/* Yksittäinen tapahtuma */
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem 1fr; /* marker + content */
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+}
+
+/* Piste */
+.timeline-marker {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  margin-left: 0.25rem; /* kohdistus viivalle */
+  margin-top: 0.4rem;
+}
+
+/* Kortti */
+.timeline-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.timeline-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.timeline-card p {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--text);
+}
+
+.timeline-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.timeline-card li {
+  margin-bottom: 0.35rem;
+}
+
+/* Kuva kortin sisällä */
+.timeline-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+/* Pieni hover (ei pakollinen, mutta tyylikäs) */
+.timeline-card:hover {
+  border-color: var(--accent);
+}
+
+/* RESPONSIVE: timeline toimii myös mobiilissa */
+@media (max-width: 900px) {
+  .timeline {
+    padding-left: 1.75rem;
+  }
+
+  .timeline::before {
+    left: 0.8rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1rem;
+  }
+
+  .timeline-marker {
+    margin-left: 0.15rem;
+  }
+}
