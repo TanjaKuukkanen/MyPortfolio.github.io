@@ -10,31 +10,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<script>
-  const modal = document.getElementById('imageModal');
-  const modalImg = modal.querySelector('.image-modal__img');
-  const overlay = modal.querySelector('.image-modal__overlay');
-
-  document.querySelectorAll('[data-enlarge]').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  overlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  function closeModal() {
-    modal.setAttribute('aria-hidden', 'true');
-    modalImg.src = '';
-  }
-</script>
-
-
 <body>
 
   <!-- NAVIGAATIO -->
@@ -215,11 +190,6 @@
     <p>© 2025 Tanja Kuukkanen</p>
   </footer>
 
-  <!-- IMAGE MODAL -->
-  <div class="image-modal" id="imageModal" aria-hidden="true">
-    <div class="image-modal__overlay"></div>
-    <img class="image-modal__img" alt="">
-  </div>
 
 
 </body>
