@@ -203,25 +203,13 @@
     <p>© 2025 Tanja Kuukkanen</p>
   </footer>
 
-
   <script>
     const images = document.querySelectorAll('.timeline-image');
 
     images.forEach(img => {
       img.addEventListener('click', () => {
-        const overlay = document.createElement('div');
-        overlay.className = 'image-overlay';
-
-        const enlargedImg = document.createElement('img');
-        enlargedImg.src = img.src;
-        enlargedImg.alt = img.alt;
-
-        overlay.appendChild(enlargedImg);
-        document.body.appendChild(overlay);
-
-        overlay.addEventListener('click', () => {
-          overlay.remove();
-        });
+        images.forEach(i => i.classList.remove('enlarged'));
+        img.classList.toggle('enlarged');
       });
     });
   </script>

@@ -273,11 +273,21 @@ h2 {
   opacity: 0.95;
 
   cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  max-width: 100%;
 }
 
 /* Pieni hover (ei pakollinen, mutta tyylikäs) */
 .timeline-card:hover {
   border-color: var(--accent);
+}
+/* Kun kuva on suurennettu */
+.timeline-image.enlarged {
+  transform: scale(1.8);
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  cursor: zoom-out;
 }
 
 .image-overlay {
