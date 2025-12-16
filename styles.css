@@ -314,7 +314,7 @@ h2 {
   overflow: hidden;
   background: #111;
 
-  max-height: 380px;
+  height: 380px;
 }
 
 .carousel-image {
@@ -387,5 +387,11 @@ h2 {
 
   .timeline-marker {
     margin-left: 0.15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-card {
+    height: 260px;
   }
 }
