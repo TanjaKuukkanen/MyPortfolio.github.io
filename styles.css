@@ -336,6 +336,7 @@ h2 {
   font-size: 2rem;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
+  z-index: 2;
 }
 
 .carousel-btn.prev {
