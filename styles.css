@@ -339,17 +339,6 @@ h2 {
   margin: 3rem 0;
 }
 
-/* Enlarge karusellin kuville (vain CI/CD) */
-.carousel-ci-cd .enlargeable {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.carousel-ci-cd .enlargeable.enlarged {
-  transform: scale(1.8);
-  z-index: 15;
-  cursor: zoom-out;
-}
-
 .image-overlay {
   position: fixed;
   inset: 0;

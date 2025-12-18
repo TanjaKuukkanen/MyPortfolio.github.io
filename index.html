@@ -247,31 +247,33 @@
 
   <script>
     /* ===============================
-       IMAGE ENLARGE (OVERLAY)
-       =============================== */
+      IMAGE ENLARGE (OVERLAY – FINAL)
+      =============================== */
 
-    const enlargeables = document.querySelectorAll('.enlargeable, .timeline-image');
+    document.querySelectorAll('.timeline-image, .carousel-ci-cd .carousel-image')
+      .forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
 
-    enlargeables.forEach(img => {
-      img.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+          // estetään useat overlayt
+          if (document.querySelector('.image-overlay')) return;
 
-        const overlay = document.createElement('div');
-        overlay.className = 'image-overlay';
+          const overlay = document.createElement('div');
+          overlay.className = 'image-overlay';
 
-        const bigImg = document.createElement('img');
-        bigImg.src = img.src;
-        bigImg.alt = img.alt || '';
+          const bigImg = document.createElement('img');
+          bigImg.src = img.src;
+          bigImg.alt = img.alt || '';
 
-        overlay.appendChild(bigImg);
-        document.body.appendChild(overlay);
+          overlay.appendChild(bigImg);
+          document.body.appendChild(overlay);
 
-        overlay.addEventListener('click', () => {
-          overlay.remove();
+          overlay.addEventListener('click', () => {
+            overlay.remove();
+          });
         });
       });
-    });
 
     /* ===============================
        CI/CD CAROUSEL
