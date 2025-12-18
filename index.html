@@ -247,14 +247,14 @@
 
   <script>
     /* ===============================
-   IMAGE ENLARGE (timeline + CI/CD carousel)
-   =============================== */
+       IMAGE ENLARGE (timeline + CI/CD carousel)
+       =============================== */
 
     const enlargeables = document.querySelectorAll('.enlargeable, .timeline-image');
 
     enlargeables.forEach(img => {
       img.addEventListener('click', (e) => {
-        e.stopPropagation(); // estää nappeja sekoittumasta
+        e.stopPropagation();
 
         const isEnlarged = img.classList.contains('enlarged');
 
@@ -265,7 +265,6 @@
         }
       });
     });
-
 
     /* ===============================
        CI/CD CAROUSEL
@@ -332,6 +331,7 @@
       });
     }
   </script>
+
 
 
 
