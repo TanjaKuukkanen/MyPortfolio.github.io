@@ -327,6 +327,10 @@ h2 {
   z-index: 1;
   pointer-events: none;
 }
+.carousel-ci-cd .carousel-image {
+  pointer-events: auto; ✅
+  cursor: zoom-in;
+}
 
 /* Nuolinapit */
 .carousel-btn {
@@ -357,6 +361,18 @@ h2 {
 .carousel-section {
   margin: 3rem 0;
 }
+
+/* Enlarge karusellin kuville (vain CI/CD) */
+.carousel-ci-cd .enlargeable {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carousel-ci-cd .enlargeable.enlarged {
+  transform: scale(1.8);
+  z-index: 5;
+  cursor: zoom-out;
+}
+
 
 .social-links {
   margin-top: 1rem;

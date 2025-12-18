@@ -156,17 +156,39 @@
 
         <article class="timeline-item">
           <div class="timeline-marker" aria-hidden="true"></div>
+
           <div class="timeline-card">
             <h3>CI/CD-julkaisuputki</h3>
-            <p>Julkaisuputki koostui useasta vaiheesta,
-              joissa GitHubiin tehty muutos käynnisti automaattisesti build- ja deploy-prosessin.
-              Karusellin kuvat havainnollistavat putken kokonaisuuden,
-              käynnistyksen sekä teknisen toteutuksen.</p>
 
-            <!-- Esim: rajattu kuva yml:stä -->
-            <img class="timeline-image" src="images/yml.png" alt="tähän tekstiä">
+            <div class="timeline-split">
+
+              <!-- VASEN: TEKSTI -->
+              <div class="timeline-text">
+                <p>
+                  Julkaisuputki koostui useasta vaiheesta, joissa GitHubiin tehty muutos
+                  käynnisti automaattisesti build- ja deploy-prosessin.
+                  Karusellin kuvat havainnollistavat putken kokonaisuuden,
+                  käynnistyksen sekä teknisen toteutuksen.
+                </p>
+              </div>
+
+              <!-- OIKEA: KARUSELLI -->
+              <div class="timeline-visual">
+                <div class="carousel-card carousel-ci-cd">
+
+                  <button class="carousel-btn prev" aria-label="Edellinen kuva">‹</button>
+
+                  <img src="images/pipeline-1.png" alt="CI/CD-putki AWS:ssä" class="carousel-image enlargeable">
+
+                  <button class="carousel-btn next" aria-label="Seuraava kuva">›</button>
+
+                </div>
+              </div>
+
+            </div>
           </div>
         </article>
+
 
         <article class="timeline-item">
           <div class="timeline-marker" aria-hidden="true"></div>
@@ -188,7 +210,8 @@
     <section id="naytteet" class="carousel-section">
       <h2>Kuvia sovelluksesta projektin lopussa</h2>
 
-      <div class="carousel-card">
+      <div class="carousel-card carousel-ui">
+
 
         <button class="carousel-btn prev" aria-label="Edellinen kuva">
           ‹
@@ -242,42 +265,69 @@
     });
 
     /* ===============================
-       IMAGE CAROUSEL
+       CI/CD CAROUSEL
        =============================== */
 
-    const carouselImages = [
-      'images/etusivu.png',
-      'images/etusivuhakukentta.png',
-      'images/ilmoitus.png',
-      'images/ostoskori.png',
-      'images/kirjautuminen.png',
-      'images/rekisteroityminen.png',
-    ];
+    const ciCdCarousel = document.querySelector('.carousel-ci-cd');
 
-    let currentIndex = 0;
+    if (ciCdCarousel) {
+      const ciCdImages = [
+        'images/pipeline-1.png',
+        'images/pipeline-2.png',
+        'images/pipeline-3.png'
+      ];
 
-    const carouselImageEl = document.querySelector('.carousel-image');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
+      let ciCdIndex = 0;
 
-    if (carouselImageEl && prevBtn && nextBtn) {
-      function updateCarouselImage() {
-        carouselImageEl.src = carouselImages[currentIndex];
-      }
+      const img = ciCdCarousel.querySelector('.carousel-image');
+      const prev = ciCdCarousel.querySelector('.carousel-btn.prev');
+      const next = ciCdCarousel.querySelector('.carousel-btn.next');
 
-      prevBtn.addEventListener('click', () => {
-        currentIndex =
-          (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-        updateCarouselImage();
+      prev.addEventListener('click', () => {
+        ciCdIndex = (ciCdIndex - 1 + ciCdImages.length) % ciCdImages.length;
+        img.src = ciCdImages[ciCdIndex];
       });
 
-      nextBtn.addEventListener('click', () => {
-        currentIndex =
-          (currentIndex + 1) % carouselImages.length;
-        updateCarouselImage();
+      next.addEventListener('click', () => {
+        ciCdIndex = (ciCdIndex + 1) % ciCdImages.length;
+        img.src = ciCdImages[ciCdIndex];
+      });
+    }
+
+    /* ===============================
+       UI CAROUSEL (APP IMAGES)
+       =============================== */
+
+    const uiCarousel = document.querySelector('.carousel-ui');
+
+    if (uiCarousel) {
+      const uiImages = [
+        'images/etusivu.png',
+        'images/etusivuhakukentta.png',
+        'images/ilmoitus.png',
+        'images/ostoskori.png',
+        'images/kirjautuminen.png',
+        'images/rekisteroityminen.png'
+      ];
+
+      let uiIndex = 0;
+
+      const img = uiCarousel.querySelector('.carousel-image');
+      const prev = uiCarousel.querySelector('.carousel-btn.prev');
+      const next = uiCarousel.querySelector('.carousel-btn.next');
+
+      prev.addEventListener('click', () => {
+        uiIndex = (uiIndex - 1 + uiImages.length) % uiImages.length;
+        img.src = uiImages[uiIndex];
+      });
+
+      next.addEventListener('click', () => {
+        uiIndex = (uiIndex + 1) % uiImages.length;
+        img.src = uiImages[uiIndex];
       });
     }
   </script>
+
 
 
 </body>
