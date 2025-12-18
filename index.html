@@ -247,22 +247,28 @@
 
   <script>
     /* ===============================
-       IMAGE ENLARGE (timeline + CI/CD carousel)
+       IMAGE ENLARGE WITH OVERLAY
        =============================== */
 
     const enlargeables = document.querySelectorAll('.enlargeable, .timeline-image');
 
     enlargeables.forEach(img => {
       img.addEventListener('click', (e) => {
-        e.stopPropagation();
+        e.stopPropagation(); // estää nuolien ja muiden klikkien sekoittumisen
 
-        const isEnlarged = img.classList.contains('enlarged');
+        const overlay = document.createElement('div');
+        overlay.className = 'image-overlay';
 
-        enlargeables.forEach(i => i.classList.remove('enlarged'));
+        const bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.alt = img.alt || '';
 
-        if (!isEnlarged) {
-          img.classList.add('enlarged');
-        }
+        overlay.appendChild(bigImg);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', () => {
+          overlay.remove();
+        });
       });
     });
 
@@ -278,7 +284,7 @@
         'images/buildspecfrontend.png',
         'images/buildspecbackend.png',
         'images/codepipeline.png',
-        'images/codepipelinebackend.png',
+        'images/codepipelinebackend.png'
       ];
 
       let ciCdIndex = 0;
@@ -287,19 +293,21 @@
       const prev = ciCdCarousel.querySelector('.carousel-btn.prev');
       const next = ciCdCarousel.querySelector('.carousel-btn.next');
 
-      prev.addEventListener('click', () => {
+      prev.addEventListener('click', (e) => {
+        e.stopPropagation();
         ciCdIndex = (ciCdIndex - 1 + ciCdImages.length) % ciCdImages.length;
         img.src = ciCdImages[ciCdIndex];
       });
 
-      next.addEventListener('click', () => {
+      next.addEventListener('click', (e) => {
+        e.stopPropagation();
         ciCdIndex = (ciCdIndex + 1) % ciCdImages.length;
         img.src = ciCdImages[ciCdIndex];
       });
     }
 
     /* ===============================
-       UI CAROUSEL (APP IMAGES)
+       UI CAROUSEL
        =============================== */
 
     const uiCarousel = document.querySelector('.carousel-ui');
@@ -320,12 +328,14 @@
       const prev = uiCarousel.querySelector('.carousel-btn.prev');
       const next = uiCarousel.querySelector('.carousel-btn.next');
 
-      prev.addEventListener('click', () => {
+      prev.addEventListener('click', (e) => {
+        e.stopPropagation();
         uiIndex = (uiIndex - 1 + uiImages.length) % uiImages.length;
         img.src = uiImages[uiIndex];
       });
 
-      next.addEventListener('click', () => {
+      next.addEventListener('click', (e) => {
+        e.stopPropagation();
         uiIndex = (uiIndex + 1) % uiImages.length;
         img.src = uiImages[uiIndex];
       });

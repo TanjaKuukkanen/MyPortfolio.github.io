@@ -350,6 +350,22 @@ h2 {
   cursor: zoom-out;
 }
 
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  cursor: zoom-out;
+}
+
 .social-links {
   margin-top: 1rem;
   display: flex;
