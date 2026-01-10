@@ -364,6 +364,7 @@ h2 {
   cursor: zoom-in;
 }
 .carousel-liiketoiminta .carousel-image {
+  pointer-events: auto;
   cursor: zoom-in;
 }
 
