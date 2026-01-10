@@ -363,6 +363,9 @@ h2 {
   pointer-events: auto;
   cursor: zoom-in;
 }
+.carousel-liiketoiminta .carousel-image {
+  cursor: zoom-in;
+}
 
 /* Nuolinapit */
 .carousel-btn {
