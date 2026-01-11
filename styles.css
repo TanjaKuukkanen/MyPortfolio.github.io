@@ -156,11 +156,11 @@ h2 {
 .expertise-card ul {
   padding-left: 1.1rem;
   margin-top: auto;
+  color: var(--muted);
 }
 
 .expertise-card li {
   margin-bottom: 0.4rem;
-  color: var(--muted);
 }
 
 /* =========================
