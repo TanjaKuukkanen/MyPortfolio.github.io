@@ -285,11 +285,6 @@ h2 {
   color: var(--muted);
 }
 
-.summary p {
-  margin-bottom: 1em;
-  color: white;
-}
-
 .timeline-visual {
   flex: 1;
   display: flex;
@@ -304,6 +299,7 @@ h2 {
 
 .timeline-card .lead {
   margin: 0;
+  margin-bottom: 1em;
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text);
