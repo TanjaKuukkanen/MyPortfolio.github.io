@@ -502,16 +502,17 @@
 
   <script>
     /* ===============================
-      IMAGE ENLARGE (OVERLAY – FINAL)
-      =============================== */
+    IMAGE ENLARGE (OVERLAY)
+    =============================== */
 
-    document.querySelectorAll('.timeline-image, .carousel-card .carousel-image')
+    document
+      .querySelectorAll('.timeline-image, .enlargeable')
       .forEach(img => {
         img.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
 
-          // estetään useat overlayt
+          // Estetään useat overlayt
           if (document.querySelector('.image-overlay')) return;
 
           const overlay = document.createElement('div');
@@ -524,6 +525,7 @@
           overlay.appendChild(bigImg);
           document.body.appendChild(overlay);
 
+          // Sulje overlay klikkaamalla
           overlay.addEventListener('click', () => {
             overlay.remove();
           });
@@ -531,108 +533,70 @@
       });
 
     /* ===============================
-       PROJEKTINHALLINTA CAROUSEL
-       =============================== */
-    const projectManagementCarousel = document.querySelector('.carousel-project-management');
-
-    if (projectManagementCarousel) {
-      const projectManagementImages = [
-        'images/projektinhallinta.png',
-        'images/PB.png'
-      ];
-
-      let projectManagementIndex = 0;
-
-      const projectManagementImg = projectManagementCarousel.querySelector('.carousel-image');
-      const projectManagementPrev = projectManagementCarousel.querySelector('.carousel-btn.prev');
-      const projectManagementNext = projectManagementCarousel.querySelector('.carousel-btn.next');
-
-      projectManagementPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        projectManagementIndex =
-          (projectManagementIndex - 1 + projectManagementImages.length) %
-          projectManagementImages.length;
-        projectManagementImg.src = projectManagementImages[projectManagementIndex];
-      });
-
-      projectManagementNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        projectManagementIndex =
-          (projectManagementIndex + 1) %
-          projectManagementImages.length;
-        projectManagementImg.src = projectManagementImages[projectManagementIndex];
-      });
-    }
-
-    /* ===============================
-    LIIKETOIMINTA CAROUSEL
+    GENERIC CAROUSEL
     =============================== */
 
-    const businessCarousel = document.querySelector('.carousel-liiketoiminta');
+    function initCarousel(selector, images) {
+      const carousel = document.querySelector(selector);
+      if (!carousel) return;
 
-    if (businessCarousel) {
-      const businessImages = [
-        'images/instagram.png',
-        'images/pitch-note.png',
-        'images/BMC.png',
-        'images/VPC.png'
-      ];
+      let index = 0;
 
-      let businessIndex = 0;
+      const img = carousel.querySelector('.carousel-image');
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
 
-      const businessImg = businessCarousel.querySelector('.carousel-image');
-      const businessPrev = businessCarousel.querySelector('.carousel-btn.prev');
-      const businessNext = businessCarousel.querySelector('.carousel-btn.next');
+      if (!img || !prevBtn || !nextBtn) return;
 
-      businessPrev.addEventListener('click', (e) => {
+      const showImage = () => {
+        img.src = images[index];
+      };
+
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        businessIndex = (businessIndex - 1 + businessImages.length) % businessImages.length;
-        businessImg.src = businessImages[businessIndex];
+
+        index = (index - 1 + images.length) % images.length;
+        showImage();
       });
 
-      businessNext.addEventListener('click', (e) => {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        businessIndex = (businessIndex + 1) % businessImages.length;
-        businessImg.src = businessImages[businessIndex];
+
+        index = (index + 1) % images.length;
+        showImage();
       });
     }
-
-
 
     /* ===============================
-       SOVELLUSKUVAT CAROUSEL
-       =============================== */
+    CAROUSEL INSTANCES
+    =============================== */
 
-    const uiCarousel = document.querySelector('.carousel-ui');
+    // Projektinhallinta
+    initCarousel('.carousel-project-management', [
+      'images/projektinhallinta.png',
+      'images/PB.png'
+    ]);
 
-    if (uiCarousel) {
-      const uiImages = [
-        'images/etusivu.png',
-        'images/etusivuhakukentta.png',
-        'images/ilmoitus.png',
-        'images/ostoskori.png',
-        'images/kirjautuminen.png',
-        'images/rekisteroityminen.png'
-      ];
+    // Liiketoiminta
+    initCarousel('.carousel-liiketoiminta', [
+      'images/instagram.png',
+      'images/pitch-note.png',
+      'images/BMC.png',
+      'images/VPC.png'
+    ]);
 
-      let uiIndex = 0;
+    // UI-näkymät
+    initCarousel('.carousel-ui', [
+      'images/etusivu.png',
+      'images/etusivuhakukentta.png',
+      'images/ilmoitus.png',
+      'images/ostoskori.png',
+      'images/kirjautuminen.png',
+      'images/rekisteroityminen.png'
+    ]);
 
-      const uiImg = uiCarousel.querySelector('.carousel-image');
-      const uiPrev = uiCarousel.querySelector('.carousel-btn.prev');
-      const uiNext = uiCarousel.querySelector('.carousel-btn.next');
-
-      uiPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        uiIndex = (uiIndex - 1 + uiImages.length) % uiImages.length;
-        uiImg.src = uiImages[uiIndex];
-      });
-
-      uiNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        uiIndex = (uiIndex + 1) % uiImages.length;
-        uiImg.src = uiImages[uiIndex];
-      });
-    }
   </script>
 
 
