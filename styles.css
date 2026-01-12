@@ -139,9 +139,6 @@ h2 {
 /* =========================
    OSAAMINEN / 3 KOLUMNIA
    ========================= */
-#osaaminen {
-  margin-top: 3rem;
-}
 
 .expertise-grid {
   display: grid;
@@ -347,14 +344,6 @@ h2 {
 .timeline-card:hover {
   border-color: var(--accent);
 }
-/* Kun kuva on suurennettu */
-.timeline-image.enlarged {
-  transform: scale(1.8);
-  z-index: 10;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  cursor: zoom-out;
-}
 
 .carousel-card {
   position: relative;
@@ -373,9 +362,6 @@ h2 {
   display: block;
   background: #111;
   z-index: 1;
-}
-
-.carousel-image {
   cursor: zoom-in;
 }
 
