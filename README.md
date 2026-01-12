@@ -10,6 +10,8 @@ sekä sitä, miten osaamiseni kehittyi projektin aikana.
 Portfolio on toteutettu osana opintoja JAMKissa (Jyväskylän ammattikorkeakoulu)
 oppimistarkoituksessa.
 
+Suora linkki portfolioon https://tanjakuukkanen.github.io/Portfolio/
+
 ---
 
 Kiitos kun tutustuit portfoliooni ✨
